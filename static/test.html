@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
+    <script src="https://unpkg.com/video.js/dist/video.min.js"></script>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+<!--        <label>-->
+<!--            Text-->
+<!--            <textarea id="text"></textarea>-->
+<!--        </label>-->
+<!--        <script lang="js">-->
+<!--            document.getElementById('text').addEventListener('change', (event) => {-->
+<!--                let counts = {}-->
+<!--                const str = event.target.value.replace(' ', '').replace('\n', '').replace('.', '').replace(',', '').replace('?', '')-->
+<!--                for (let i = 0; i < str.length; i++) {-->
+<!--                    let symbol = str.charAt(i)-->
+<!--                    if (Object.prototype.hasOwnProperty.call(counts, symbol.toLowerCase())) {-->
+<!--                        counts[symbol.toLowerCase()]++-->
+<!--                    } else {-->
+<!--                        counts[symbol.toLowerCase()] = 1-->
+<!--                    }-->
+<!--                }-->
+<!--                let sortable = [];-->
+<!--                for (let symbol in counts) {-->
+<!--                    sortable.push([symbol, (counts[symbol] / str.length * 100).toFixed(2)])-->
+<!--                }-->
+<!--                sortable.sort(function(a, b) {-->
+<!--                    return b[1] - a[1]-->
+<!--                })-->
+<!--                console.log(sortable)-->
+<!--            })-->
+<!--        </script>-->
+        <!--      <video id="video">-->
+<!--        <source src="http://localhost:81/api/video.test/test.m3u8" />-->
+<!--      </video>-->
+      <video
+        id="my-player"
+        class="video-js"
+        controls
+        preload="auto"
+        data-setup='{}'
+      >
+        <source src="http://localhost/vod/test.mp4/index.m3u8" type="application/x-mpegURL" />
+      </video>
+<!--      <script>-->
+<!--        const src = 'http://localhost:81/api/video.test/test.m3u8';-->
+<!--        var video = document.getElementById('video');-->
+<!--        if(Hls.isSupported()) {-->
+<!--          var hls = new Hls();-->
+<!--          hls.loadSource(src);-->
+<!--          hls.attachMedia(video);-->
+<!--          hls.on(Hls.Events.MANIFEST_PARSED,function() {-->
+<!--            video.play();-->
+<!--          });-->
+<!--        }-->
+<!--        // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.-->
+<!--        // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element through the `src` property.-->
+<!--        // This is using the built-in support of the plain video element, without using hls.js.-->
+<!--        // Note: it would be more normal to wait on the 'canplay' event below however on Safari (where you are most likely to find built-in HLS support) the video.src URL must be on the user-driven-->
+<!--        // white-list before a 'canplay' event will be emitted; the last video event that can be reliably listened-for when the URL is not on the white-list is 'loadedmetadata'.-->
+<!--        else if (video.canPlayType('application/vnd.apple.mpegurl')) {-->
+<!--          video.src = src;-->
+<!--          video.addEventListener('loadedmetadata',function() {-->
+<!--            video.play();-->
+<!--          });-->
+<!--        } else {-->
+<!--          console.log('not supported')-->
+<!--        }-->
+<!--      </script>-->
+    </main>
+    <footer></footer>
+  </body>
+</html>
